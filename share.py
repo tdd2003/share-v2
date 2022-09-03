@@ -11,14 +11,6 @@ except:
 	import requests
 os.system("clear")
 # Tool 
-def logo():
-    log="""
-   \033[1;32m██╗  ██╗██╗███████╗██╗   ██╗    ████████╗██████╗ ██╗ ██████╗██╗  ██╗███████╗██████╗
-   \033[1;33m██║  ██║██║██╔════╝██║   ██║    ╚══██╔══╝██╔══██╗██║██╔════╝██║ ██╔╝██╔════╝██╔══██╗
-   \033[1;34m███████║██║█████╗  ██║   ██║       ██║   ██████╔╝██║██║     █████╔╝ █████╗  ██████╔
-   \033[1;36m██╔══██║██║██╔══╝  ██║   ██║       ██║   ██╔══██╗██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗
-   \033[1;31m██║  ██║██║███████╗╚██████╔╝       ██║   ██║  ██║██║╚██████╗██║  ██╗███████╗██║  ██║
-   \033[1;36m╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝        ╚═╝   ╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
 """
     for h in log:
        sys.stdout.write(h)
@@ -33,7 +25,7 @@ def clr():
 
 clr()
 logo()
-o=open('token.txt', "a+")
+o=open('t', "a+")
 o.close()
 a = 0
 stt=0
@@ -42,12 +34,12 @@ while(True):
   input('\033[1;33m Làm Xong Hoặc Có Sẵn Token Vui Lòng Ấn Enter')
   dulieu = open('token.txt',mode='r').read().split('\n')
   if dulieu == ['']:
-     print('\033[1;31m Vui Lòng Thêm Token Vào Rồi Mới Nhấn Enter')
+     print('\033[1;31m Token Đâu Thằng Lồn')
   else:
      print('\033[1;33m Tìm Thấy \033[1;36m'+str(len(dulieu))+' \033[1;33m Token Facebook')
      break
 print("\033[1;31m«===================================================================»")
-id = input(" \033[1;31m➻\033[1;31m❥ \033[1;33mNhập Link cần share❤️:\033[1;33m ")
+id = input(" \033[1;31m➻\033[1;31m❥ \033[1;33mLink post đâu thằng lồn:\033[1;33m ")
 def share(i):
     headers ={
        'authority': 'graph.facebook.com',
@@ -68,7 +60,7 @@ def share(i):
     if 'id' in retu:
         print('\033[1;00m',retu)
     else:
-       print('\033[1;31m Token Block Tính Năng Hoặc Link Post Sai!!!')
+       print('\033[1;31m Token Die Đòi Chạy Hả Rác?')
 while (True):
 	for i in range(len(dulieu)):
 		khoitao = threading.Thread(target=share,args=(i,)).start()
